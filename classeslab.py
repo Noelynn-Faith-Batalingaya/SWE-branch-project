@@ -3,10 +3,11 @@ class Plant:
         self.genus = genus
         self.species = species
 
-    def plantname():
-        print("The genus is: "  genus " and the species is:" species)
+    def plantname(self):
+        print("The plant is: " + self.genus + " " + self.species)
 
 class Grass(Plant): 
-    def __init__(self, genus, species):
-        self.genus = genus
-        self.species = species
+    pass
+
+asparagus = Plant("asparagus", "officinalis")
+asparagus.plantname()
