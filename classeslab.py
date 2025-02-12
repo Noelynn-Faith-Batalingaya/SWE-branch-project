@@ -4,17 +4,18 @@ class Plant:
     def __init__(self, genus, species):
         self.genus = genus
         self.species = species
-        self.garden = []
         
 
     def plantname(self):
         print("The plant is: " + self.genus + " " + self.species)
 
-    def plantGarden(self, *plants):
+    def plantGarden(cls, *plants):
+        garden = []
         for plant in plants:
-            if plant not in self.garden:
-                self.garden.append(plant.genus + " " + plant.species)
-        print("Here is your garden: ", self.garden)
+            plant_name = plant.genus + " " + plant.species
+            if plant_name not in garden:
+                garden.append(plant_name)
+        print("Here is your garden: ", garden)
         
 
 class Grass(Plant): 
@@ -29,4 +30,4 @@ angelTrumpet = Plant("brugmansia", "suaveolens")
 bamboo = Plant("bamboosa", "ardinarifolia")
 carrot = Plant("daucus", "carota")
 
-Plant.plantGarden(waterLettuce, aloe, angelTrumpet, bamboo, bamboo, carrot)
+Plant.plantGarden(waterLettuce, aloe, angelTrumpet, bamboo, bamboo, carrot, aloe, asparagus)
